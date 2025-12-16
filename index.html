@@ -1,117 +1,281 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abdulrehman Asif | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdulrehman Asif | Portfolio</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">AA</div>
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-<div id="progress"></div>
-<div class="cursor"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title" data-aos="fade-down">Abdulrehman Asif</h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Full Stack Developer & Tech Enthusiast</p>
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+        Building modern web solutions with passion and precision
+      </p>
+      <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+        <button class="btn btn-primary">View My Work</button>
+        <button class="btn btn-secondary">Get In Touch</button>
+      </div>
+    </div>
+    <div class="hero-scroll" data-aos="fade-up" data-aos-delay="800">
+      <span>Scroll to explore</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
 
+  <!-- ABOUT -->
+  <section class="about" id="about" data-aos="fade-up">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a passionate 12th-class student at Superior College with a keen interest in software engineering and web development. I combine technical expertise with creative problem-solving to build innovative solutions.
+          </p>
+          <p>
+            Beyond coding, I'm a huge anime enthusiast and Japan culture fan. This unique blend of interests drives my approach to technology—creative, analytical, and always pushing boundaries.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+            <h3>10+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="400">
+            <h3>2+</h3>
+            <p>Years Learning</p>
+          </div>
+          <div class="stat" data-aos="zoom-in" data-aos-delay="600">
+            <h3>100%</h3>
+            <p>Dedication</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-<ul class="nav-links">
-<li data-target="hero">Home</li>
-<li data-target="about">About</li>
-<li data-target="links">Links</li>
-<li data-target="more">More</li>
-</ul>
-<input type="text" id="navSearch" placeholder="Search...">
-</nav>
+  <!-- EDUCATION -->
+  <section class="education" id="education" data-aos="fade-up">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="education-card" data-aos="fade-right">
+          <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>12th Class – Superior College</h3>
+          <p>Currently pursuing science stream with focus on technology and computing fundamentals</p>
+          <span class="badge">In Progress</span>
+        </div>
+        <div class="education-card" data-aos="fade-up">
+          <div class="education-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <h3>Self Learning</h3>
+          <p>Continuously learning Web Development, Software Engineering, and modern technologies</p>
+          <span class="badge">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SKILLS -->
+  <section class="skills" id="skills" data-aos="fade-up">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="flip-left">
+          <div class="skill-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>HTML5, CSS3, JavaScript</p>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+          <div class="skill-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Programming</h3>
+          <p>Python, JavaScript Basics</p>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+          <div class="skill-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Tools & Tech</h3>
+          <p>Git, VS Code, Figma</p>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="600">
+          <div class="skill-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Frameworks</h3>
+          <p>React, Bootstrap</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- HERO -->
-<section id="hero" class="section hero">
-<h1 class="typing"></h1>
-<p class="subtitle">Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
-</section>
+  <!-- YOUTUBE -->
+  <section class="youtube" id="youtube" data-aos="fade-up">
+    <div class="container">
+      <h2>My YouTube Channels</h2>
+      <div class="youtube-grid">
+        <div class="youtube-card" data-aos="zoom-in">
+          <div class="youtube-icon anime">🎌</div>
+          <h3>HowsGoku</h3>
+          <p>Anime reviews, recommendations, and Japanese culture content</p>
+          <a href="#" class="channel-link">
+            <i class="fab fa-youtube"></i> Visit Channel
+          </a>
+        </div>
+        <div class="youtube-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="youtube-icon vlog">🎥</div>
+          <h3>HowsGokuVlogs</h3>
+          <p>Lifestyle, tech reviews, and daily vlogs from my journey</p>
+          <a href="#" class="channel-link">
+            <i class="fab fa-youtube"></i> Visit Channel
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SOCIAL -->
+  <section class="social" data-aos="fade-up">
+    <div class="container">
+      <h2>Connect With Me</h2>
+      <div class="social-links">
+        <a href="#" class="social-link linkedin" data-aos="flip-left" data-aos-delay="200">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="social-link youtube" data-aos="flip-left" data-aos-delay="400">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="#" class="social-link github" data-aos="flip-left" data-aos-delay="600">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-link twitter" data-aos="flip-left" data-aos-delay="800">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="section about" data-aos="fade-up">
-<h2>About Me</h2>
-<p>12th-class student at Superior College passionate about software engineering, web development, anime culture & futuristic tech.</p>
-</section>
+  <!-- CONTACT -->
+  <section class="contact" id="contact" data-aos="fade-up">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>Let's Talk!</h3>
+          <p>Have a project in mind or want to collaborate? I'd love to hear from you!</p>
+          <div class="contact-details">
+            <div class="detail-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <p>Email</p>
+                <span>contact@example.com</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <p>Phone</p>
+                <span>+92 XXX XXXXXXX</span>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <p>Location</p>
+                <span>Islamabad, Pakistan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Abdulrehman Asif. All rights reserved.</p>
+      <p>Designed & Built with <i class="fas fa-heart"></i> by Abdulrehman Asif</p>
+    </div>
+  </footer>
 
-<!-- LINKS -->
-<section id="links" class="section links" data-aos="zoom-in">
-<h2>Connect</h2>
-<div class="icon-links">
-<a href="#" class="icon github"><i class="fab fa-github"></i></a>
-<a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
-<a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
-<a href="#" class="icon linkedin"><i class="fab fa-linkedin"></i></a>
-<a href="mailto:example@gmail.com" class="icon gmail"><i class="fas fa-envelope"></i></a>
-</div>
-</section>
+  <!-- JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
 
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
 
-<!-- MORE -->
-<section id="more" class="section more" data-aos="fade-left">
-<h2>More About Me</h2>
-<p>Focused on clean UI, heavy animations, modern frontend and becoming a professional software engineer.</p>
-</section>
-
-
-<footer class="footer">© 2025 Abdulrehman Asif</footer>
-
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-AOS.init({ once:false, duration:900, easing:'ease-in-out' });
-
-
-/* Typing */
-const text = "Abdulrehman Asif";
-let i = 0;
-(function type(){
-if(i < text.length){
-document.querySelector('.typing').innerHTML += text.charAt(i++);
-setTimeout(type,120);
-}
-})();
-
-
-/* Cursor */
-document.addEventListener('mousemove', e => {
-const c = document.querySelector('.cursor');
-c.style.left = e.clientX + 'px';
-c.style.top = e.clientY + 'px';
-});
-
-
-/* Scroll Progress */
-window.addEventListener('scroll', () => {
-const h = document.documentElement;
-document.getElementById('progress').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
-});
-
-
-/* Nav Scroll */
-document.querySelectorAll('.nav-links li').forEach(i => {
-i.onclick = () => document.getElementById(i.dataset.target).scrollIntoView({behavior:'smooth'});
-});
-
-
-/* Navbar Search Live Effect */
-document.getElementById('navSearch').addEventListener('input', e => {
-document.querySelector('.subtitle').innerText = e.target.value || 'Aspiring Software Engineer | Web Developer | Tech Enthusiast';
-});
-</script>
-
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          navMenu.classList.remove('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
-```
