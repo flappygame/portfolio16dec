@@ -10,83 +10,78 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
 
-<!-- PROGRESS BAR -->
 <div id="progress"></div>
-
-
-<!-- CURSOR -->
 <div class="cursor"></div>
 
 
 <!-- NAVBAR -->
 <nav class="navbar">
 <ul class="nav-links">
-<li data-target="hero">Contact Me</li>
-<li data-target="about">About Me</li>
+<li data-target="hero">Home</li>
+<li data-target="about">About</li>
 <li data-target="links">Links</li>
 <li data-target="more">More</li>
 </ul>
-<input type="text" id="navSearch" placeholder="Type here...">
+<input type="text" id="navSearch" placeholder="Search...">
 </nav>
 
 
 <!-- HERO -->
 <section id="hero" class="section hero">
 <h1 class="typing"></h1>
-<p>Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
+<p class="subtitle">Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
 </section>
 
 
 <!-- ABOUT -->
 <section id="about" class="section about" data-aos="fade-up">
 <h2>About Me</h2>
-<p>I am a 12th‑class student at Superior College passionate about software engineering, web development, Japan and anime culture.</p>
+<p>12th-class student at Superior College passionate about software engineering, web development, anime culture & futuristic tech.</p>
 </section>
 
 
 <!-- LINKS -->
-<section id="links" class="section links" data-aos="fade-left">
-<h2>My Platforms</h2>
-<div class="card">GitHub</div>
-<div class="card">YouTube</div>
-<div class="card">Instagram</div>
-<div class="card">LinkedIn</div>
-<div class="card">Gmail</div>
+<section id="links" class="section links" data-aos="zoom-in">
+<h2>Connect</h2>
+<div class="icon-links">
+<a href="#" class="icon github"><i class="fab fa-github"></i></a>
+<a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+<a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" class="icon linkedin"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:example@gmail.com" class="icon gmail"><i class="fas fa-envelope"></i></a>
+</div>
 </section>
 
 
 <!-- MORE -->
-<section id="more" class="section more" data-aos="zoom-in">
+<section id="more" class="section more" data-aos="fade-left">
 <h2>More About Me</h2>
-<p>Focused on self‑learning, futuristic UI design, and becoming a professional software engineer.</p>
+<p>Focused on clean UI, heavy animations, modern frontend and becoming a professional software engineer.</p>
 </section>
 
 
-<footer class="footer">
-© 2025 Abdulrehman Asif
-</footer>
+<footer class="footer">© 2025 Abdulrehman Asif</footer>
 
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init({ once:false, duration:1000 });
+AOS.init({ once:false, duration:900, easing:'ease-in-out' });
 
 
 /* Typing */
 const text = "Abdulrehman Asif";
 let i = 0;
-function type() {
-if (i < text.length) {
-document.querySelector('.typing').innerHTML += text.charAt(i);
-i++;
+(function type(){
+if(i < text.length){
+document.querySelector('.typing').innerHTML += text.charAt(i++);
 setTimeout(type,120);
 }
-}
-type();
+})();
 
 
 /* Cursor */
@@ -97,24 +92,22 @@ c.style.top = e.clientY + 'px';
 });
 
 
-/* Progress */
+/* Scroll Progress */
 window.addEventListener('scroll', () => {
-const total = document.body.scrollHeight - window.innerHeight;
-document.getElementById('progress').style.width = (window.scrollY / total) * 100 + '%';
+const h = document.documentElement;
+document.getElementById('progress').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
 });
 
 
-/* Navbar search live display */
+/* Nav Scroll */
+document.querySelectorAll('.nav-links li').forEach(i => {
+i.onclick = () => document.getElementById(i.dataset.target).scrollIntoView({behavior:'smooth'});
+});
+
+
+/* Navbar Search Live Effect */
 document.getElementById('navSearch').addEventListener('input', e => {
-document.querySelector('.typing').innerText = e.target.value || 'Abdulrehman Asif';
-});
-
-
-/* Nav click scroll */
-document.querySelectorAll('.nav-links li').forEach(item => {
-item.addEventListener('click', () => {
-document.getElementById(item.dataset.target).scrollIntoView({ behavior: 'smooth' });
-});
+document.querySelector('.subtitle').innerText = e.target.value || 'Aspiring Software Engineer | Web Developer | Tech Enthusiast';
 });
 </script>
 
