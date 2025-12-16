@@ -4,43 +4,49 @@ body{background:#0b0f1a;color:#fff;overflow-x:hidden}
 
 
 /* Progress */
-#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ff004c,#00c6ff);z-index:999}
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#ff004c,#00e5ff);z-index:999}
 
 
 /* Cursor */
-.cursor{width:18px;height:18px;border:2px solid #00e5ff;border-radius:50%;position:fixed;pointer-events:none;transform:translate(-50%,-50%);transition:0.08s}
+.cursor{width:14px;height:14px;border:2px solid #00e5ff;border-radius:50%;position:fixed;pointer-events:none;transform:translate(-50%,-50%);transition:.08s}
 
 
 /* Navbar */
-.navbar{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:10px 30px;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);z-index:1000}
-
-
-.nav-links{display:flex;gap:20px;list-style:none}
-.nav-links li{cursor:pointer;transition:.3s}
-.nav-links li:hover{color:#00e5ff;transform:translateY(-3px)}
-
-
-.navbar input{padding:6px 12px;background:#10162f;border:1px solid #00e5ff;color:white;border-radius:6px}
+.navbar{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:8px 20px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);z-index:1000}
+.nav-links{list-style:none;display:flex;gap:14px}
+.nav-links li{cursor:pointer;font-size:.9rem;transition:.3s}
+.nav-links li:hover{color:#00e5ff;transform:translateY(-2px)}
+.navbar input{width:140px;padding:5px 10px;background:#10162f;border:1px solid #00e5ff;color:white;border-radius:6px}
 
 
 /* Sections */
-.section{min-height:100vh;padding:80px 8%;display:flex;flex-direction:column;justify-content:center;transition:.5s}
-
-
-.hero{background:linear-gradient(120deg,#ff004c,#0047ff);text-align:center}
+.section{min-height:100vh;padding:60px 6%;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero{text-align:center;background:linear-gradient(120deg,#ff004c,#0047ff)}
 .about{background:linear-gradient(120deg,#141e30,#243b55)}
 .links{background:linear-gradient(120deg,#23074d,#cc5333)}
 .more{background:linear-gradient(120deg,#000428,#004e92)}
 
 
-.hero h1{font-size:3.2rem;background:linear-gradient(90deg,#ff004c,#00c6ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1{font-size:3rem;background:linear-gradient(90deg,#ff004c,#00e5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 2s infinite alternate}
 
 
-/* Cards */
-.card{margin:10px 0;padding:14px 18px;border-radius:12px;background:rgba(0,0,0,.5);transition:.4s}
-.card:hover{transform:scale(1.05) translateY(-6px);box-shadow:0 0 20px rgba(0,229,255,.4)}
+@keyframes pulse{from{text-shadow:0 0 8px #ff004c}to{text-shadow:0 0 18px #00e5ff}}
+
+
+.subtitle{font-size:.95rem;opacity:.9}
+
+
+/* Icon Links */
+.icon-links{display:flex;gap:18px;margin-top:10px}
+.icon{font-size:1.8rem;color:white;transition:.4s}
+.icon:hover{transform:scale(1.4) rotate(10deg)}
+.github:hover{color:#aaa}
+.youtube:hover{color:#ff0000}
+.instagram:hover{color:#e1306c}
+.linkedin:hover{color:#0a66c2}
+.gmail:hover{color:#00e5ff}
 
 
 /* Footer */
-.footer{text-align:center;padding:15px;background:black;font-size:.9rem}
+.footer{text-align:center;padding:12px;background:black;font-size:.85rem}
 ```
