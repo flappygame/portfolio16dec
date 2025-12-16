@@ -14,7 +14,7 @@
 <body>
 
 
-<!-- SCROLL PROGRESS BAR -->
+<!-- PROGRESS BAR -->
 <div id="progress"></div>
 
 
@@ -24,107 +24,96 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-<h2 class="logo">AA</h2>
-<ul>
-<li><a href="#hero">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#contact">Contact</a></li>
+<ul class="nav-links">
+<li data-target="hero">Contact Me</li>
+<li data-target="about">About Me</li>
+<li data-target="links">Links</li>
+<li data-target="more">More</li>
 </ul>
+<input type="text" id="navSearch" placeholder="Type here...">
 </nav>
-
-
-<!-- SEARCH BAR -->
-<div class="search-bar">
-<input type="text" id="search" placeholder="Search sections...">
-</div>
 
 
 <!-- HERO -->
 <section id="hero" class="section hero">
 <h1 class="typing"></h1>
-<p class="subtitle">Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
+<p>Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
 </section>
 
 
 <!-- ABOUT -->
 <section id="about" class="section about" data-aos="fade-up">
 <h2>About Me</h2>
-<p>12th-class student at Superior College passionate about software engineering, web development, anime and futuristic tech.</p>
+<p>I am a 12th‑class student at Superior College passionate about software engineering, web development, Japan and anime culture.</p>
 </section>
 
 
-<!-- SKILLS -->
-<section id="skills" class="section skills" data-aos="zoom-in">
-<h2>Skills</h2>
-<div class="skill">Web Development</div>
-<div class="skill">Programming Basics</div>
-<div class="skill">Technology & Tools</div>
+<!-- LINKS -->
+<section id="links" class="section links" data-aos="fade-left">
+<h2>My Platforms</h2>
+<div class="card">GitHub</div>
+<div class="card">YouTube</div>
+<div class="card">Instagram</div>
+<div class="card">LinkedIn</div>
+<div class="card">Gmail</div>
 </section>
 
 
-<!-- CONTACT -->
-<section id="contact" class="section contact" data-aos="fade-up">
-<h2>Contact Me</h2>
-<form>
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button class="btn gradient">Send</button>
-</form>
+<!-- MORE -->
+<section id="more" class="section more" data-aos="zoom-in">
+<h2>More About Me</h2>
+<p>Focused on self‑learning, futuristic UI design, and becoming a professional software engineer.</p>
 </section>
 
 
-<!-- FOOTER -->
 <footer class="footer">
-<a href="#">GitHub</a>
-<a href="#">YouTube</a>
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-<a href="mailto:example@gmail.com">Gmail</a>
+© 2025 Abdulrehman Asif
 </footer>
 
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-/* AOS */
-AOS.init({ once:false });
+AOS.init({ once:false, duration:1000 });
 
 
-/* TYPING EFFECT */
+/* Typing */
 const text = "Abdulrehman Asif";
 let i = 0;
-function typing() {
+function type() {
 if (i < text.length) {
 document.querySelector('.typing').innerHTML += text.charAt(i);
 i++;
-setTimeout(typing, 150);
+setTimeout(type,120);
 }
 }
-typing();
+type();
 
 
-/* CURSOR EFFECT */
+/* Cursor */
 document.addEventListener('mousemove', e => {
-const cursor = document.querySelector('.cursor');
-cursor.style.left = e.pageX + 'px';
-cursor.style.top = e.pageY + 'px';
+const c = document.querySelector('.cursor');
+c.style.left = e.clientX + 'px';
+c.style.top = e.clientY + 'px';
 });
 
 
-/* SCROLL PROGRESS */
+/* Progress */
 window.addEventListener('scroll', () => {
-const progress = document.getElementById('progress');
 const total = document.body.scrollHeight - window.innerHeight;
-progress.style.width = (window.scrollY / total) * 100 + '%';
+document.getElementById('progress').style.width = (window.scrollY / total) * 100 + '%';
 });
 
 
-/* SEARCH */
-document.getElementById('search').addEventListener('keyup', e => {
-const value = e.target.value.toLowerCase();
-document.querySelectorAll('.section').forEach(sec => {
-sec.style.display = sec.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+/* Navbar search live display */
+document.getElementById('navSearch').addEventListener('input', e => {
+document.querySelector('.typing').innerText = e.target.value || 'Abdulrehman Asif';
+});
+
+
+/* Nav click scroll */
+document.querySelectorAll('.nav-links li').forEach(item => {
+item.addEventListener('click', () => {
+document.getElementById(item.dataset.target).scrollIntoView({ behavior: 'smooth' });
 });
 });
 </script>
