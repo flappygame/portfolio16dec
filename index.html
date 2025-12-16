@@ -1,99 +1,135 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdulrehman Asif | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulrehman Asif | Portfolio</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 class="glow-text">Abdulrehman Asif</h1>
-    <p class="typing">
-      Aspiring Software Engineer | Web Developer | Tech Enthusiast
-    </p>
-    <div class="buttons">
-      <button class="btn red">View Portfolio</button>
-      <button class="btn blue">Contact Me</button>
-    </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section class="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I am a 12th-class student at Superior College with a deep passion for
-      software engineering, web development, and modern technology.
-      I love Japan and anime culture, and my goal is to become a professional
-      software engineer.
-    </p>
-  </section>
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress"></div>
 
-  <!-- EDUCATION -->
-  <section class="education" data-aos="fade-right">
-    <h2>Education</h2>
-    <div class="card">
-      <h3>12th Class – Superior College</h3>
-      <p>Focused on technology and computing</p>
-    </div>
-    <div class="card">
-      <h3>Self Learning</h3>
-      <p>Web Development & Software Engineering</p>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section class="skills" data-aos="zoom-in">
-    <h2>Skills</h2>
-    <div class="skill-box">Web Development</div>
-    <div class="skill-box">Programming Basics</div>
-    <div class="skill-box">Technology & Tools</div>
-  </section>
+<!-- CURSOR -->
+<div class="cursor"></div>
 
-  <!-- YOUTUBE -->
-  <section class="youtube" data-aos="fade-up">
-    <h2>YouTube Channels</h2>
-    <div class="card red-glow">🎌 HowsGoku (Anime Channel)</div>
-    <div class="card blue-glow">🎥 HowsGokuVlogs (Vlogging)</div>
-  </section>
 
-  <!-- SOCIAL -->
-  <section class="social" data-aos="fade-up">
-    <h2>Connect With Me</h2>
-    <a href="#" class="social-link">LinkedIn</a>
-    <a href="#" class="social-link">YouTube</a>
-  </section>
+<!-- NAVBAR -->
+<nav class="navbar">
+<h2 class="logo">AA</h2>
+<ul>
+<li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-  <!-- CONTACT -->
-  <section class="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Message"></textarea>
-      <button class="btn gradient">Send Message</button>
-    </form>
-  </section>
 
-  <!-- JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-      once: true
-    });
-  </script>
+<!-- SEARCH BAR -->
+<div class="search-bar">
+<input type="text" id="search" placeholder="Search sections...">
+</div>
+
+
+<!-- HERO -->
+<section id="hero" class="section hero">
+<h1 class="typing"></h1>
+<p class="subtitle">Aspiring Software Engineer | Web Developer | Tech Enthusiast</p>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section about" data-aos="fade-up">
+<h2>About Me</h2>
+<p>12th-class student at Superior College passionate about software engineering, web development, anime and futuristic tech.</p>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="section skills" data-aos="zoom-in">
+<h2>Skills</h2>
+<div class="skill">Web Development</div>
+<div class="skill">Programming Basics</div>
+<div class="skill">Technology & Tools</div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section contact" data-aos="fade-up">
+<h2>Contact Me</h2>
+<form>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn gradient">Send</button>
+</form>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+<a href="#">GitHub</a>
+<a href="#">YouTube</a>
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<a href="mailto:example@gmail.com">Gmail</a>
+</footer>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+/* AOS */
+AOS.init({ once:false });
+
+
+/* TYPING EFFECT */
+const text = "Abdulrehman Asif";
+let i = 0;
+function typing() {
+if (i < text.length) {
+document.querySelector('.typing').innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, 150);
+}
+}
+typing();
+
+
+/* CURSOR EFFECT */
+document.addEventListener('mousemove', e => {
+const cursor = document.querySelector('.cursor');
+cursor.style.left = e.pageX + 'px';
+cursor.style.top = e.pageY + 'px';
+});
+
+
+/* SCROLL PROGRESS */
+window.addEventListener('scroll', () => {
+const progress = document.getElementById('progress');
+const total = document.body.scrollHeight - window.innerHeight;
+progress.style.width = (window.scrollY / total) * 100 + '%';
+});
+
+
+/* SEARCH */
+document.getElementById('search').addEventListener('keyup', e => {
+const value = e.target.value.toLowerCase();
+document.querySelectorAll('.section').forEach(sec => {
+sec.style.display = sec.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+});
+});
+</script>
+
 
 </body>
 </html>
+```
